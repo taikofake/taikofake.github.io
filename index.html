@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function redirectToCountry() {
+            const userLanguage = navigator.language
+            const userCountry = userLanguage.substring(0, 2);
+
+            switch (userCountry) {
+                case "ja":
+                    redirectURL = "https://taikofake.github.io/jp.html";
+                    break;
+                case "ko":
+                    redirectURL = "https://taikofake.github.io/kr.html";
+                    break;
+                default:
+                    redirectURL = "https://taikofake.github.io/en.html"; // 기본 URL
+            }
+            window.location.href = redirectURL;
+        }
+    </script>
+</head>
+<body onload="redirectToCountry()">
+</body>
